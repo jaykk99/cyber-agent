@@ -79,7 +79,7 @@ CYBER_AGENT_CODE=your-code-here uvicorn app.main:app --host 0.0.0.0 --port 8000
 Open http://localhost:8000, enter the access code, and chat.
 Environment: `CYBER_AGENT_CODE` (required), `COMPOSIO_API_KEY`,
 `GITHUB_TOKEN`, `HORDE_API_KEY` (optional, anon key works),
-`RECON_BASE_URL` (default https://recon-anything.onrender.com).
+`RECON_BASE_URL` (default: the ReconAnything service URL).
 
 Tests: `python3 -m pytest tests/ -q` (52 tests, all green 2026-10-24).
 
@@ -102,7 +102,7 @@ Until a host frees up, run it with the one command above.
 - `GET /api/health` returns ok, composio=false (no key), recon base set.
 - ReconAnything export import (real export schema): 2 findings in,
   secret-valued row masked, count correct.
-- Live investigation of `https://error-inbox.onrender.com` (pre-authorized):
+- Live investigation of error-inbox (pre-authorized):
   HTTP 200, one real added finding (missing Content Security Policy)
   with fetched header evidence and a fix.
 - Horde brain live: job accepted (202), completed with a real generation.
